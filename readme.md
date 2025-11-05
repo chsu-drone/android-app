@@ -10,3 +10,6 @@
 | ⬜️ | Создать проект |  |
 | ⬜️ | Запушить пустой проект |  |
 |  |  |  |
+
+### Ссылки
+[Android Studio](https://developer.android.com/studio?hl=ru)
