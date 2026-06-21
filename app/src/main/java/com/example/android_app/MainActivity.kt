@@ -80,6 +80,7 @@ fun ObjectDetectionScreen() {
         selectedImageUri = uri
         if (uri != null) {
             //TODO: НЕЙРОСЕТЬ ДОБАВИТЬ
+            //ункиця уже вызывается - в ней добавить модель!!!
             detections = runObjectDetection(uri)
         }
     }
@@ -190,10 +191,10 @@ fun DetectionOverlay(detections: List<Detection>) {
  * yolo или другач модель.
  */
 fun runObjectDetection(imageUri: Uri): List<Detection> {
-    //вызов модели
-    //обработка результатов
+    //TODO: 1 - вызов модели
+    //TODO: 2 - обработка результатов
     
-    //рамки (границы)
+    //TODO: 3 - рамки рисовать с прошло этапа
     return listOf(
         Detection(
             label = "Дерево",
