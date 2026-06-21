@@ -46,6 +46,15 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.android_app.ui.theme.AndroidappTheme
 
+//TODO: модель импорт
+/*
+val session = OrtEnvironment.getEnvironment().createSession(
+    context.assets.open("best.onnx").readBytes(),
+    OrtSession.SessionOptions()
+)
+ */
+
+
 /**
  * @param label Название объекта
  * @param confidence Уверенность нейросети
@@ -220,7 +229,6 @@ fun DetectionOverlayPreview() {
 fun runObjectDetection(imageUri: Uri): List<Detection> {
     //TODO: 1 - вызов модели
     //TODO: 2 - обработка результатов
-    
     //TODO: 3 - рамки рисовать с прошло этапа
     return listOf(
         Detection(
