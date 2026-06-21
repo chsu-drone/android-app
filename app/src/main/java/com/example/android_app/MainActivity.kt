@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -40,6 +41,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.android_app.ui.theme.AndroidappTheme
@@ -67,6 +69,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+@Preview
 @Composable
 fun ObjectDetectionScreen() {
     val context = LocalContext.current
@@ -181,6 +185,29 @@ fun DetectionOverlay(detections: List<Detection>) {
                 text = labelText,
                 style = style.copy(color = Color.White),
                 topLeft = Offset(rect.left + 4f, rect.top - textLayoutResult.size.height)
+            )
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DetectionOverlayPreview() {
+    AndroidappTheme {
+        Box(modifier = Modifier.size(300.dp)) {
+            DetectionOverlay(
+                detections = listOf(
+                    Detection(
+                        label = "Дерево",
+                        confidence = 0.95f,
+                        boundingBox = Rect(0.1f, 0.2f, 0.4f, 0.8f)
+                    ),
+                    Detection(
+                        label = "Автомобиль",
+                        confidence = 0.88f,
+                        boundingBox = Rect(0.5f, 0.5f, 0.9f, 0.9f)
+                    )
+                )
             )
         }
     }
